@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package config;
+
+// The configuration service definition.
+service ConfigService {
+  // Sends a new configuration
+  rpc CreateConfig (ConfigRequest) returns (ConfigResponse) {}
+}
+
+// The request message containing the configuration's details.
+message ConfigRequest {
+  string key = 1;
+  string value = 2;
+}
+
+// The response message containing the processing result.
+message ConfigResponse {
+  string result = 1;
+}
